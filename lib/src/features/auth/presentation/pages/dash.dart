@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_take_home/src/core/widgets/bottom_sheet_menu.dart';
+
+import '../../../../core/constants/app_constants.dart';
+import '../../../../core/constants/app_strings.dart';
+import '../../../../core/widgets/bottom_sheet_menu.dart';
 
 class DashboardPage extends StatelessWidget {
   const DashboardPage({super.key});
@@ -10,7 +13,7 @@ class DashboardPage extends StatelessWidget {
       appBar: appBar(context),
       body: const Column(
         children: [
-          SizedBox(height: 16),
+          SizedBox(height: AppConstants.defaultPadding),
           Text('Welcome to the Dashboard'),
         ],
       ),
@@ -19,7 +22,7 @@ class DashboardPage extends StatelessWidget {
 
   AppBar appBar(BuildContext context) {
     return AppBar(
-      title: const Text('Dashboard'),
+      title: const Text(AppStrings.dashboardTitle),
       backgroundColor: Colors.white,
       centerTitle: true,
       actions: [
@@ -43,8 +46,8 @@ class DashboardPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Icon(Icons.logout), 
-                        SizedBox(width: 16), 
-                        Text('Logout'), 
+                        SizedBox(width: AppConstants.defaultPadding), 
+                        Text(AppStrings.dashboardLogoutButtonText), 
                       ],
                     ),
                   ),

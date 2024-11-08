@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_take_home/src/core/constants/app_constants.dart';
-import 'package:flutter_take_home/src/core/widgets/gradient_elevated_button.dart';
+
+import '../../../../core/widgets/gradient_elevated_button.dart';
+import '../../../../core/constants/app_constants.dart';
+import '../../../../core/constants/app_strings.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -29,18 +31,18 @@ class LoginPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Welcome,',
+                  AppStrings.loginTitle,
                   style: AppConstants.titleStyle,
                 ),
                 const Text(
-                  'Please login to continue',
+                  AppStrings.loginSubtitle,
                   style: AppConstants.subtitleStyle,
                 ),
 
                 const SizedBox(height: AppConstants.defaultPaddingExtraLarge),
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Username',
+                    labelText: AppStrings.loginUsername,
                     prefixIcon: Icon(Icons.person_outline_rounded),
                   ),
                 ),
@@ -48,7 +50,7 @@ class LoginPage extends StatelessWidget {
                 TextFormField(
                   obscureText: true,
                   decoration: const InputDecoration(
-                    labelText: 'Password',
+                    labelText: AppStrings.loginPassword,
                     prefixIcon: Icon(Icons.lock_outline_rounded),
                   ),
                 ),
@@ -66,8 +68,10 @@ class LoginPage extends StatelessWidget {
                     width: double.infinity,
                     height: AppConstants.buttonHeight,
                     borderRadius: BorderRadius.circular(AppConstants.borderRadius),
-                    onPressed: () {},
-                    child: const Text('Login'),
+                    onPressed: () {
+                      // TODO: Login
+                    },
+                    child: const Text(AppStrings.loginButtonText),
                   ),
           ],
         );
