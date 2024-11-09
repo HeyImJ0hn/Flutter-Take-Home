@@ -1,3 +1,4 @@
+import 'package:either_dart/either.dart';
 import 'package:flutter_take_home/src/features/auth/domain/repositories/auth_repository.dart';
 
 class LogoutUseCase {
@@ -5,7 +6,7 @@ class LogoutUseCase {
 
   LogoutUseCase(this._authRepository);
 
-  Future<bool> call() async {
+  Future<Either<Exception, bool>> call() async {
     return _authRepository.logout();
   }
 }

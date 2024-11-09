@@ -1,3 +1,4 @@
+import 'package:either_dart/either.dart';
 import 'package:flutter_take_home/src/features/dashboard/data/datasources/dash_data_source.dart';
 import 'package:flutter_take_home/src/features/dashboard/domain/entities/comment.dart';
 import 'package:flutter_take_home/src/features/dashboard/domain/entities/post.dart';
@@ -9,21 +10,30 @@ class DashRepositoryImpl implements DashRepository{
   DashRepositoryImpl(this.apiDataSource);
 
   @override
-  Future<List<Post>> fetchDashboardPosts(int limit, int page) async {
-    final postModels = await apiDataSource.fetchDashboardPosts(limit, page);
-    return postModels.map((postModel) => postModel.toEntity()).toList();
+  Future<Either<Exception, List<Post>>> fetchDashboardPosts(int limit, int page) async {
+    final result = await apiDataSource.fetchDashboardPosts(limit, page);
+    return result.fold(
+      (exception) => Left(exception),
+      (postModels) => Right(postModels.map((postModel) => postModel.toEntity()).toList()),
+    );
   }
 
   @override
-  Future<List<Comment>> fetchPostComments(int postId) async {
-    final commentModels = await apiDataSource.fetchPostComments(postId);
-    return commentModels.map((commentModel) => commentModel.toEntity()).toList();
+  Future<Either<Exception, Post>>fetchDashboardPost(int postId) async {
+    final result = await apiDataSource.fetchDashboardPost(postId);
+    return result.fold(
+      (exception) => Left(exception),
+      (postModel) => Right(postModel.toEntity()),
+    );
   }
 
   @override
-  Future<Post> fetchDashboardPost(int postId) async {
-    final postModel = await apiDataSource.fetchDashboardPost(postId);
-    return postModel.toEntity();
+  Future<Either<Exception, List<Comment>>> fetchPostComments(int postId) async {
+    final result = await apiDataSource.fetchPostComments(postId);
+    return result.fold(
+      (exception) => Left(exception),
+      (commentModels) => Right(commentModels.map((commentModel) => commentModel.toEntity()).toList()),
+    );
   }
 
 }

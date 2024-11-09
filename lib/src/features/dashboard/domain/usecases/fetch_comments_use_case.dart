@@ -1,3 +1,4 @@
+import 'package:either_dart/either.dart';
 import 'package:flutter_take_home/src/features/dashboard/domain/repositories/api_repository.dart';
 
 import '../entities/comment.dart';
@@ -7,7 +8,7 @@ class FetchCommentsUseCase {
 
   FetchCommentsUseCase(this._dashRepository);
 
-  Future<List<Comment>> call(int postId) async {
+  Future<Either<Exception, List<Comment>>> call(int postId) async {
     return _dashRepository.fetchPostComments(postId);
   }
 }
