@@ -2,6 +2,11 @@
 
 Aplicação desenvolvida seguindo uma estrutura feature first, de modo a facilitar a organização.
 
+A aplicação é composta por 3 páginas: Login, Dashboard, Details.
+- Login: é a página onde o utilizador faz o login
+- Dashboard: é a página onde estão dispostos posts do api JSONPlaceholder
+- Details: é a página onde estão dispostos os comentários de cada post. Esta página pode ser acedida ao clicar num post na página Dashboard
+
 Bibliotecas usadas:
 - Dio
 - Get_It
