@@ -1,16 +1,12 @@
 # flutter_take_home
 
-A new Flutter project.
+Aplicação desenvolvida seguindo uma estrutura feature first, de modo a facilitar a organização.
+Bibliotecas usadas:
+- Dio
+- Get_It
+- Flutter_Bloc
+- Go_Router
+- Shared_Preferences
+- Either_Dart
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[![wakatime](https://wakatime.com/badge/user/51c71709-cd0f-4dcf-be93-ddde3281a624/project/51d0c586-53ff-4bb3-a799-175ffa2c7210.svg)](https://wakatime.com/badge/user/51c71709-cd0f-4dcf-be93-ddde3281a624/project/51d0c586-53ff-4bb3-a799-175ffa2c7210)
