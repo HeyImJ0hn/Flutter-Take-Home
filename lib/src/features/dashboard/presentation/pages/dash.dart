@@ -7,8 +7,8 @@ import 'package:flutter_take_home/src/features/auth/presentation/bloc/auth_bloc.
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/widgets/bottom_sheet_menu.dart';
-import '../../../../core/widgets/post_card.dart';
 import '../blocs/details_bloc/details_bloc.dart';
+import '../widgets/post_card.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});

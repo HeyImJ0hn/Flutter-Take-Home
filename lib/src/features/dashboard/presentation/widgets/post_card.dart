@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_take_home/src/core/constants/app_strings.dart';
 import 'package:go_router/go_router.dart';
 
-import '../constants/app_constants.dart';
+import '../../../../core/constants/app_constants.dart';
 
 class PostCard extends StatelessWidget {
   final String title;

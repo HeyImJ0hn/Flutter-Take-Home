@@ -7,9 +7,9 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants/app_strings.dart';
-import '../../../../core/widgets/comments_card.dart';
-import '../../../../core/widgets/post_card.dart';
 import '../blocs/post_bloc/post_bloc.dart';
+import '../widgets/comments_card.dart';
+import '../widgets/post_card.dart';
 
 class PostDetailsPage extends StatefulWidget {
   final String postId;
