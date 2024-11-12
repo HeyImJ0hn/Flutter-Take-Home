@@ -6,7 +6,7 @@ class IsAuthenticatedUseCase {
 
   IsAuthenticatedUseCase(this._authRepository);
 
-  Future<Either<Exception, bool>> call() async {
+  Future<Either<Exception, String>> call() async {
     return await _authRepository.isAuthenticated();
   }
 }

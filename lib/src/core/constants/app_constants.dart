@@ -5,7 +5,7 @@ class AppConstants {
   // Colours
   static const Color primaryColor = Color(0xFFF2A02B);
   static const Color secondaryColor = Color(0xFFDF6F56);
-  static const Color backgroundColor = Color(0xFFFFFFFF);
+  static const Color backgroundColor = Color.fromARGB(255, 238, 238, 238);
 
   static const Color gradientStart = Color(0xFFF2A02B);
   static const Color gradientEnd = Color(0xFFDF6F56);

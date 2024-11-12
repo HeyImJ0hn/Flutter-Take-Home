@@ -9,7 +9,7 @@ class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl(this.loginDataSource);
 
   @override
-  Future<Either<Exception, bool>> isAuthenticated() {
+  Future<Either<Exception, String>> isAuthenticated() {
     return loginDataSource.isAuthenticated();
   }
 

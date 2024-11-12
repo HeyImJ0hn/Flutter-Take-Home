@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:either_dart/either.dart';
+import 'package:flutter_take_home/src/core/constants/app_strings.dart';
 import 'package:flutter_take_home/src/features/dashboard/data/models/comment_model.dart';
 import 'package:flutter_take_home/src/features/dashboard/data/models/post_model.dart';
 
@@ -19,7 +20,7 @@ class DashDataSourceImpl implements DashDataSource {
       final posts = (response.data as List).map((post) => PostModel.fromJson(post)).toList();
       return Right(posts);
     } catch (e) {
-      return Left(Exception('Failed to fetch posts\n -> $e'));
+      return Left(Exception('${AppStrings.dashDataSourcePostsFailure}\n -> $e'));
     }
   }
 
@@ -29,7 +30,7 @@ class DashDataSourceImpl implements DashDataSource {
       final response = await dio.get('https://jsonplaceholder.typicode.com/posts/$postId');
       return Right(PostModel.fromJson(response.data));
     } catch (e) {
-      return Left(Exception('Failed to fetch post $postId\n -> $e'));
+      return Left(Exception('${AppStrings.dashDataSourcePostFailure} $postId\n -> $e'));
     }
   }
 
@@ -40,7 +41,7 @@ class DashDataSourceImpl implements DashDataSource {
       final comments = (response.data as List).map((comment) => CommentModel.fromJson(comment)).toList();
       return Right(comments);
     } catch (e) {
-      return Left(Exception('Failed to fetch comments for post $postId\n -> $e'));
+      return Left(Exception('${AppStrings.dashDataSourceCommentsFailure} $postId\n -> $e'));
     }
   }
 }
