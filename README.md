@@ -1,6 +1,7 @@
 # flutter_take_home
 
 Aplicação desenvolvida seguindo uma estrutura feature first, de modo a facilitar a organização.
+
 Bibliotecas usadas:
 - Dio
 - Get_It
